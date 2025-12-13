@@ -128,20 +128,19 @@ python -m ui.gradio_ui
 ```
 
 ⏰ Airflow DAG
-    DAG Name: news_api_pipeline
-    Schedule: Hourly
-    Task:
-    Fetch news → Publish to Kafka
-    To use Airflow on Windows, Docker or WSL is recommended.
+- DAG Name: news_api_pipeline
+- Schedule: Hourly
+- Task: Fetch news → Publish to Kafka
+- To use Airflow on Windows, Docker or WSL is recommended.
 
 🔄 Workflow Overview
-    Airflow schedules the pipeline
-    Kafka Producer fetches news from News API
-    Kafka Consumer receives articles
-    Spark processes text and computes sentiment
-    MongoDB stores processed articles
-    Gradio UI displays results
+- Airflow schedules the pipeline
+- Kafka Producer fetches news from News API
+- Kafka Consumer receives articles
+- Spark processes text and computes sentiment
+- MongoDB stores processed articles
+- Gradio UI displays results
 
 📊 Sample Output
-    Title: News headline
-    Sentiment Score: Range from -1 (negative) to +1 (positive)
+- Title: News headline
+- Sentiment Score: Range from -1 (negative) to +1 (positive)

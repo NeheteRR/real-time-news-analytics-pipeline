@@ -60,3 +60,6 @@ docker-data/
 # =========================
 *.key
 *.pem
+
+# Gradio
+.gradio/
