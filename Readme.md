@@ -74,13 +74,11 @@ real-time-news-analytics-pipeline/
 ## ⚙️ Setup Instructions (Windows)
 
 ### 1️⃣ Prerequisites
-
-        Ensure the following are installed:
-
-        - Python **3.9 or 3.10**
-        - Docker Desktop (**WSL 2 enabled**)
-        - Java **JDK 8 or 11**
-        - Git
+Ensure the following are installed:
+- Python **3.9 or 3.10**
+- Docker Desktop (**WSL 2 enabled**)
+- Java **JDK 8 or 11**
+- Git
 
 ---
 
