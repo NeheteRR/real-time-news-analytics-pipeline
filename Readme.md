@@ -1,62 +1,73 @@
-📰 Real-Time News Analytics Pipeline
+# 📰 Real-Time News Analytics Pipeline
 
-A real-time news analytics system built using Apache Airflow, Apache Kafka, Apache Spark, and MongoDB.
-The pipeline fetches live news articles from the News API, streams them through Kafka, performs sentiment analysis, stores the processed data in MongoDB, and provides CRUD operations along with a Gradio-based UI to view results.
+A **real-time news analytics system** built using **Apache Airflow, Apache Kafka, Apache Spark, and MongoDB**.
 
-This project demonstrates an end-to-end big data pipeline using modern data engineering tools.
+This pipeline fetches live news articles from the **News API**, streams them through **Kafka**, performs **sentiment analysis**, stores the processed data in **MongoDB**, and provides **CRUD operations** along with a **Gradio-based UI** to view results.
 
-🚀 Features
-    🔄 Real-time data ingestion from News API
-    📡 Streaming with Apache Kafka
-    ⚙️ Workflow orchestration using Apache Airflow
-    🧠 Sentiment analysis using Spark + TextBlob
-    🗄️ MongoDB for persistent storage
-    ✏️ CRUD operations (Create, Read, Update, Delete)
-    🖥️ Gradio UI for viewing news headlines and sentiment scores
-    🐳 Docker-based setup for Kafka & MongoDB
+This project demonstrates an **end-to-end big data pipeline** using modern data engineering tools.
+
+---
+
+## 🚀 Features
+
+- 🔄 Real-time data ingestion from News API  
+- 📡 Streaming with Apache Kafka  
+- ⚙️ Workflow orchestration using Apache Airflow  
+- 🧠 Sentiment analysis using Apache Spark (PySpark) + TextBlob  
+- 🗄️ MongoDB for persistent storage  
+- ✏️ CRUD operations (Create, Read, Update, Delete)  
+- 🖥️ Gradio UI for viewing news headlines and sentiment scores  
+- 🐳 Docker-based setup for Kafka & MongoDB  
+
+---
 
 ## 🛠️ Technology Stack
-| Layer         | Technology            |
-|--------------|------------------------|
-| Orchestration | Apache Airflow        |
-| Streaming     | Apache Kafka          |
-| Processing    | Apache Spark (PySpark)|
-| NLP           | TextBlob              |
-| Database      | MongoDB               |
-| UI            | Gradio                |
-| Language      | Python                |
-| Deployment    | Docker                |
 
+| Layer          | Technology              |
+|---------------|--------------------------|
+| Orchestration | Apache Airflow           |
+| Streaming     | Apache Kafka             |
+| Processing    | Apache Spark (PySpark)   |
+| NLP           | TextBlob                 |
+| Database      | MongoDB                  |
+| UI            | Gradio                   |
+| Language      | Python                   |
+| Deployment    | Docker                   |
 
-📁 Project Structure
+---
+
+## 📁 Project Structure
+
+```text
 real-time-news-analytics-pipeline/
 │
-├── dags/                 # Airflow DAGs
+├── dags/                     # Airflow DAGs
 │   └── airflow_dag.py
 │
-├── kafka/                # Kafka producer & consumer
+├── kafka/                    # Kafka producer & consumer
 │   ├── kafka_producer.py
 │   └── kafka_consumer.py
 │
-├── spark/                # Spark processing logic
+├── spark/                    # Spark processing logic
 │   └── spark_processing.py
 │
-├── database/             # MongoDB connection & CRUD
+├── database/                 # MongoDB connection & CRUD
 │   ├── mongodb_connect.py
 │   └── crud_operations.py
 │
-├── ui/                   # Gradio UI
+├── ui/                       # Gradio UI
 │   └── gradio_ui.py
 │
-├── docker/               # Docker configuration
+├── docker/                   # Docker configuration
 │   └── compose.yml
 │
-├── logs/                 # Application logs
-├── docs/                 # Project documentation
+├── logs/                     # Application logs
+├── docs/                     # Project documentation
 │
 ├── requirements.txt
 ├── .gitignore
 └── README.md
+
 
 ⚙️ Setup Instructions (Windows)
 1️⃣ Prerequisites
