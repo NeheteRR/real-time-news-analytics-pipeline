@@ -1,8 +1,8 @@
 # spark_processing.py  (ADD prints and try/except around insert)
-
 from pyspark.sql import SparkSession
 from textblob import TextBlob
-from mongodb_connect import insert_article
+from database.mongodb_connect import insert_article
+
 
 spark = SparkSession.builder.appName("NewsProcessing").getOrCreate()
 
