@@ -68,8 +68,11 @@ real-time-news-analytics-pipeline/
 ├── .gitignore
 └── README.md
 
+---
 
-⚙️ Setup Instructions (Windows)
+## ⚙️ Setup Instructions (Windows)
+
+---
 1️⃣ Prerequisites
     Python 3.9 or 3.10
     Docker Desktop (with WSL 2 enabled)
