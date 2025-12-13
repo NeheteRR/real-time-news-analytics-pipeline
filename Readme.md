@@ -80,6 +80,7 @@ real-time-news-analytics-pipeline/
     Git
 
 2️⃣ Clone the Repository
+    ```bash
     git clone https://github.com/<your-username>/real-time-news-analytics-pipeline.git
     cd real-time-news-analytics-pipeline
 
