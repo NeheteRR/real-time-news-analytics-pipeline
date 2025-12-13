@@ -75,12 +75,12 @@ real-time-news-analytics-pipeline/
 
 ### 1️⃣ Prerequisites
 
-Ensure the following are installed:
+        Ensure the following are installed:
 
-- Python **3.9 or 3.10**
-- Docker Desktop (**WSL 2 enabled**)
-- Java **JDK 8 or 11**
-- Git
+        - Python **3.9 or 3.10**
+        - Docker Desktop (**WSL 2 enabled**)
+        - Java **JDK 8 or 11**
+        - Git
 
 ---
 
@@ -92,28 +92,40 @@ cd real-time-news-analytics-pipeline
 ```
 
 3️⃣ Create Virtual Environment & Install Dependencies
+    ```bash
     python -m venv venv
     venv\Scripts\activate
     pip install -r requirements.txt
+    ```
 
 4️⃣ Start Kafka & MongoDB (Docker)
+    ```bash
     cd docker
     docker compose up -d
-    Verify: docker ps
+    docker ps   #Verify
+    ```
 
 5️⃣ Run Kafka Consumer
+    ```bash
     python kafka/kafka_consumer.py
-    (Keep this terminal running)
+    #(Keep this terminal running)
+    ```
 
 6️⃣ Run Kafka Producer
+    ```bash
     python kafka/kafka_producer.py
     This fetches live news and streams it to Kafka.
+    ```
 
 7️⃣ Verify MongoDB Storage
+    ```bash
     python database/crud_operations.py
+    ```
 
 8️⃣ Run Gradio UI
+    ```bash
     python -m ui.gradio_ui
+    ```
 
 ⏰ Airflow DAG
     DAG Name: news_api_pipeline
