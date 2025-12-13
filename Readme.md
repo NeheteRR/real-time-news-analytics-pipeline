@@ -129,7 +129,6 @@ python -m ui.gradio_ui
 - DAG Name: news_api_pipeline
 - Schedule: Hourly
 - Task: Fetch news → Publish to Kafka
-- To use Airflow on Windows, Docker or WSL is recommended.
 
 🔄 Workflow Overview
 - Airflow schedules the pipeline
