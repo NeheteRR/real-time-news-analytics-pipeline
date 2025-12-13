@@ -66,7 +66,8 @@ real-time-news-analytics-pipeline/
 │
 ├── requirements.txt
 ├── .gitignore
-└── README.md ```
+└── README.md 
+```
 
 ---
 
@@ -88,6 +89,7 @@ Ensure the following are installed:
 ```bash
 git clone https://github.com/<your-username>/real-time-news-analytics-pipeline.git
 cd real-time-news-analytics-pipeline
+```
 
 3️⃣ Create Virtual Environment & Install Dependencies
     python -m venv venv
