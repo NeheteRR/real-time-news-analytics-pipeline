@@ -30,3 +30,6 @@ def fetch_and_publish_news():
         print(f"Published {len(articles)} articles to Kafka")
     else:
         print("Failed to fetch news")
+
+if __name__ == "__main__":
+    fetch_and_publish_news()

@@ -1,5 +1,6 @@
 from mongodb_connect import insert_article, get_articles, update_article, delete_article
-from database.mongodb_connect import insert_article, get_articles, update_article, delete_article
+from mongodb_connect import insert_article, get_articles, update_article, delete_article
+#from database.mongodb_connect import (insert_article,get_articles,update_article,delete_article)
 
 # Example CRUD operations
 if __name__ == "__main__":
