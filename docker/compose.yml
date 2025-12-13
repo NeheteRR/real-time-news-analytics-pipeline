@@ -1,3 +1,5 @@
+version: "3.8"
+
 services:
   zookeeper:
     image: confluentinc/cp-zookeeper:7.5.0
@@ -29,6 +31,33 @@ services:
       - "27017:27017"
     volumes:
       - mongo_data:/data/db
+
+  airflow:
+    image: apache/airflow:2.7.3
+    container_name: airflow
+    depends_on:
+      - kafka
+      - mongo
+    environment:
+      AIRFLOW__CORE__EXECUTOR: SequentialExecutor
+      AIRFLOW__CORE__LOAD_EXAMPLES: "False"
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: sqlite:////opt/airflow/airflow.db
+    volumes:
+      - ../dags:/opt/airflow/dags
+    ports:
+      - "8080:8080"
+    command: >
+      bash -c "
+      airflow db init &&
+      airflow users create
+      --username admin
+      --password admin
+      --firstname admin
+      --lastname admin
+      --role Admin
+      --email admin@example.com &&
+      airflow webserver & airflow scheduler
+      "
 
 volumes:
   mongo_data:
