@@ -1,0 +1,115 @@
+📰 Real-Time News Analytics Pipeline
+
+A real-time news analytics system built using Apache Airflow, Apache Kafka, Apache Spark, and MongoDB.
+The pipeline fetches live news articles from the News API, streams them through Kafka, performs sentiment analysis, stores the processed data in MongoDB, and provides CRUD operations along with a Gradio-based UI to view results.
+
+This project demonstrates an end-to-end big data pipeline using modern data engineering tools.
+
+🚀 Features
+    🔄 Real-time data ingestion from News API
+    📡 Streaming with Apache Kafka
+    ⚙️ Workflow orchestration using Apache Airflow
+    🧠 Sentiment analysis using Spark + TextBlob
+    🗄️ MongoDB for persistent storage
+    ✏️ CRUD operations (Create, Read, Update, Delete)
+    🖥️ Gradio UI for viewing news headlines and sentiment scores
+    🐳 Docker-based setup for Kafka & MongoDB
+
+## 🛠️ Technology Stack
+| Layer         | Technology            |
+|--------------|------------------------|
+| Orchestration | Apache Airflow        |
+| Streaming     | Apache Kafka          |
+| Processing    | Apache Spark (PySpark)|
+| NLP           | TextBlob              |
+| Database      | MongoDB               |
+| UI            | Gradio                |
+| Language      | Python                |
+| Deployment    | Docker                |
+
+
+📁 Project Structure
+real-time-news-analytics-pipeline/
+│
+├── dags/                 # Airflow DAGs
+│   └── airflow_dag.py
+│
+├── kafka/                # Kafka producer & consumer
+│   ├── kafka_producer.py
+│   └── kafka_consumer.py
+│
+├── spark/                # Spark processing logic
+│   └── spark_processing.py
+│
+├── database/             # MongoDB connection & CRUD
+│   ├── mongodb_connect.py
+│   └── crud_operations.py
+│
+├── ui/                   # Gradio UI
+│   └── gradio_ui.py
+│
+├── docker/               # Docker configuration
+│   └── compose.yml
+│
+├── logs/                 # Application logs
+├── docs/                 # Project documentation
+│
+├── requirements.txt
+├── .gitignore
+└── README.md
+
+⚙️ Setup Instructions (Windows)
+1️⃣ Prerequisites
+    Python 3.9 or 3.10
+    Docker Desktop (with WSL 2 enabled)
+    Java JDK 8 or 11
+    Git
+
+2️⃣ Clone the Repository
+    git clone https://github.com/<your-username>/real-time-news-analytics-pipeline.git
+    cd real-time-news-analytics-pipeline
+
+3️⃣ Create Virtual Environment & Install Dependencies
+    python -m venv venv
+    venv\Scripts\activate
+    pip install -r requirements.txt
+    Download TextBlob resources:
+        python -m textblob.download_corpora
+
+4️⃣ Start Kafka & MongoDB (Docker)
+    cd docker
+    docker compose up -d
+    Verify: docker ps
+
+5️⃣ Run Kafka Consumer
+    python kafka/kafka_consumer.py
+    (Keep this terminal running)
+
+6️⃣ Run Kafka Producer
+    python kafka/kafka_producer.py
+    This fetches live news and streams it to Kafka.
+
+7️⃣ Verify MongoDB Storage
+    python database/crud_operations.py
+
+8️⃣ Run Gradio UI
+    python -m ui.gradio_ui
+
+⏰ Airflow DAG
+    DAG Name: news_api_pipeline
+    Schedule: Hourly
+    Task:
+    Fetch news → Publish to Kafka
+    To use Airflow on Windows, Docker or WSL is recommended.
+
+🔄 Workflow Overview
+    Airflow schedules the pipeline
+    Kafka Producer fetches news from News API
+    Kafka Consumer receives articles
+    Spark processes text and computes sentiment
+    MongoDB stores processed articles
+    Gradio UI displays results
+
+📊 Sample Output
+    Title: News headline
+    Sentiment Score: Range from -1 (negative) to +1 (positive)
