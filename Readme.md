@@ -66,7 +66,7 @@ real-time-news-analytics-pipeline/
 │
 ├── requirements.txt
 ├── .gitignore
-└── README.md
+└── README.md ```
 
 ---
 
@@ -80,7 +80,7 @@ real-time-news-analytics-pipeline/
     Git
 
 2️⃣ Clone the Repository
-    ```bash
+    ```text
     git clone https://github.com/<your-username>/real-time-news-analytics-pipeline.git
     cd real-time-news-analytics-pipeline
 
