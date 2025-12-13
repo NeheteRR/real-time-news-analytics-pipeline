@@ -72,24 +72,27 @@ real-time-news-analytics-pipeline/
 
 ## ⚙️ Setup Instructions (Windows)
 
----
-1️⃣ Prerequisites
-    Python 3.9 or 3.10
-    Docker Desktop (with WSL 2 enabled)
-    Java JDK 8 or 11
-    Git
+### 1️⃣ Prerequisites
 
-2️⃣ Clone the Repository
-    ```text
-    git clone https://github.com/<your-username>/real-time-news-analytics-pipeline.git
-    cd real-time-news-analytics-pipeline
+Ensure the following are installed:
+
+- Python **3.9 or 3.10**
+- Docker Desktop (**WSL 2 enabled**)
+- Java **JDK 8 or 11**
+- Git
+
+---
+
+### 2️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/<your-username>/real-time-news-analytics-pipeline.git
+cd real-time-news-analytics-pipeline
 
 3️⃣ Create Virtual Environment & Install Dependencies
     python -m venv venv
     venv\Scripts\activate
     pip install -r requirements.txt
-    Download TextBlob resources:
-        python -m textblob.download_corpora
 
 4️⃣ Start Kafka & MongoDB (Docker)
     cd docker
