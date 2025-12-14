@@ -1,7 +1,7 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from datetime import datetime, timedelta
-from kafka_producer import fetch_and_publish_news
+from kafka_app.kafka_producer import fetch_and_publish_news
 
 default_args = {
     'owner': 'airflow',

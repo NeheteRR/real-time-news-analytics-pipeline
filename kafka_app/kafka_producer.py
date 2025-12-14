@@ -6,7 +6,7 @@ API_KEY = "50338a87101442edbe299bc455378274"
 URL = f"https://newsapi.org/v2/top-headlines?country=us&apiKey={API_KEY}"
 
 producer = KafkaProducer(
-    bootstrap_servers=["localhost:29092"],   # Confluent host listener
+    bootstrap_servers=["kafka:29092"],   # Confluent host listener
     value_serializer=lambda v: json.dumps(v).encode("utf-8"),
     acks="all",                              # wait for leader + ISR
     retries=5,                               # simple retry

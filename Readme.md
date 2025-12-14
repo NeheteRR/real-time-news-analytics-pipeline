@@ -103,24 +103,42 @@ docker compose up -d
 docker ps   #Verify
 ```
 
-5️⃣ Run Kafka Consumer
+5️⃣ Start Airflow Scheduler
+
+Airflow webserver runs in Docker, but the scheduler must be started to execute DAGs.
+``bash
+docker exec -it airflow bash
+airflow scheduler
+```
+📌 Keep this scheduler running in the terminal.
+
+6️⃣ Access Airflow UI
+Open your browser:http://localhost:8080
+
+Login credentials:
+Username: admin
+Password: admin
+Enable the DAG: news_api_pipeline
+Trigger the DAG manually ▶
+
+7️⃣ Run Kafka Consumer
 ```bash
 python kafka/kafka_consumer.py
 #(Keep this terminal running)
 ```
 
-6️⃣ Run Kafka Producer
+8️⃣ Run Kafka Producer
 ```bash
 python kafka/kafka_producer.py
 This fetches live news and streams it to Kafka.
 ```
 
-7️⃣ Verify MongoDB Storage
+9️⃣ Verify MongoDB Storage
 ```bash
 python database/crud_operations.py
 ```
 
-8️⃣ Run Gradio UI
+🔟 Run Gradio UI
 ```bash
 python -m ui.gradio_ui
 ```

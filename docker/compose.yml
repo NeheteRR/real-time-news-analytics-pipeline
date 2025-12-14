@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   zookeeper:
     image: confluentinc/cp-zookeeper:7.5.0
@@ -14,7 +12,8 @@ services:
     image: confluentinc/cp-kafka:7.5.0
     container_name: kafka
     depends_on:
-      - zookeeper
+      zookeeper:
+        condition: service_started
     ports:
       - "29092:29092"
     environment:
@@ -44,8 +43,10 @@ services:
       AIRFLOW__CORE__EXECUTOR: SequentialExecutor
       AIRFLOW__CORE__LOAD_EXAMPLES: "False"
       AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: sqlite:////opt/airflow/airflow.db
+      PYTHONPATH: /opt/airflow
     volumes:
       - ../dags:/opt/airflow/dags
+      - ../kafka_app:/opt/airflow/kafka_app
     ports:
       - "8080:8080"
     command: >

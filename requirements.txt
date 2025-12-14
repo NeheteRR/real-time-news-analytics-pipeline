@@ -7,4 +7,6 @@ gradio
 requests
 requests==2.31.0
 python-dotenv==1.0.1
+apache-airflow==2.7.3
+
 
