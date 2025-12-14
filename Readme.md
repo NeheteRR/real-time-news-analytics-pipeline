@@ -106,14 +106,14 @@ docker ps   #Verify
 5️⃣ Start Airflow Scheduler
 
 Airflow webserver runs in Docker, but the scheduler must be started to execute DAGs.
-``bash
+```bash
 docker exec -it airflow bash
 airflow scheduler
 ```
 📌 Keep this scheduler running in the terminal.
 
 6️⃣ Access Airflow UI
-Open your browser:http://localhost:8080
+Open your browser: http://localhost:8080
 
 Login credentials:
 Username: admin
