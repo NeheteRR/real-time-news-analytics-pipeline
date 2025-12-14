@@ -115,11 +115,11 @@ airflow scheduler
 6️⃣ Access Airflow UI
 Open your browser: http://localhost:8080
 
-Login credentials:
-Username: admin
-Password: admin
-Enable the DAG: news_api_pipeline
-Trigger the DAG manually ▶
+- Login credentials:
+- Username: admin
+- Password: admin
+- Enable the DAG: news_api_pipeline
+- Trigger the DAG manually ▶
 
 7️⃣ Run Kafka Consumer
 ```bash
@@ -128,9 +128,9 @@ python kafka/kafka_consumer.py
 ```
 
 8️⃣ Run Kafka Producer
+This fetches live news and streams it to Kafka.
 ```bash
 python kafka/kafka_producer.py
-This fetches live news and streams it to Kafka.
 ```
 
 9️⃣ Verify MongoDB Storage
